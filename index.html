@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<!--STYLES-->
+<link rel="stylesheet" href="CSS/styles.css">
+
+<!--JQUERY-->
+<script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
+    crossorigin="anonymous"></script>
+
+<!--ICONS-->
+<link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+<link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+<!--JAVASCRIPT & JSON-->
+<script type="text/javascript" src="films.json"></script>
+<script type="text/javascript" src="JS/api.js"></script>
+
+<body>
+
+    <!--Header-->
+    <header class="main-header">
+        <div class="header-body">
+            <div class="brand">
+                <a href="#" class="brand-link">
+                    <h1>Film.UA</h1>
+                </a>
+            </div>
+            <div class="links-row">
+                <ul class="header-link-list">
+                    <li>
+                        <a href="#" class="link">
+                            Популярне
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="link">
+                            Увійти
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="link">
+                            Преміум-підписка
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!--Carousel in header-->
+
+        <div class="carousel">
+
+            <div class="previous slide-button">
+                <span class="material-symbols-outlined">
+                    arrow_back_ios
+                </span>
+            </div>
+
+            <div class="carousel-content">
+                <div class="carousel-body active">
+                    <header class="sp-header">
+
+                        <a href="#" class="brand-link">
+                            <h3>
+                                Іловайськ 2014. Батальйон "Донбас"
+                            </h3>
+                        </a>
+
+                    </header>
+
+                    <main class="sp-main">
+                        <p class="slide-paragraph">
+                            Сюжет картини ґрунтується на реальних подіях, що мали місце на сході України у 2014
+                            році. Командир штурмовиків із
+                            позивним Бішут отримав поранення в бою за місто Іловайськ, але герою все ж таки вдалося
+                            вижити.
+                            Його
+                            шукають
+                            комендант
+                            міста та російський офіцер Рунков, який прагне помсти.
+                        </p>
+                    </main>
+
+                    <footer class="sp-footer">
+                        <button class="sp-button">
+                            Дивитись
+                        </button>
+                    </footer>
+                </div>
+
+                <div class="carousel-body">
+                    <header class="sp-header">
+
+                        <a href="#" class="brand-link">
+                            <h3>
+                                Носоріг
+                            </h3>
+                        </a>
+
+                    </header>
+
+                    <main class="sp-main">
+                        <p class="slide-paragraph">
+                            Історія фільму заснована на реальних подіях 90-х в Україні. Головний герой на прізвисько
+                            Носоріг потрапляє до
+                            кримінального світу і починає свій кривавий шлях, який приведе його зовсім не туди, куди він
+                            очікував.
+                        </p>
+                    </main>
+
+                    <footer class="sp-footer">
+                        <button class="sp-button">
+                            Дивитись
+                        </button>
+                    </footer>
+                </div>
+
+                <div class="carousel-body">
+                    <header class="sp-header">
+
+                        <a href="#" class="brand-link">
+                            <h3>
+                                Тіні забутих предків
+                            </h3>
+                        </a>
+
+                    </header>
+
+                    <main class="sp-main">
+                        <p class="slide-paragraph">
+                            Екранізація твору Михайла Коцюбинського. Гуцульщина. На тлі гір, трембіт, своєрідних
+                            будівель розгортається ця
+                            драматична історія. Довгі роки два роди, які живуть у цьому краю, постійно сварилися. Під
+                            час зустрічей у церкві або на
+                            ярмарку виникали конфлікти і починалися з'ясування стосунків. Та Марічка й Іван, що належать
+                            до ворогуючих родин,
+                            покохали один одного.
+                        </p>
+                    </main>
+
+                    <footer class="sp-footer">
+                        <button class="sp-button">
+                            Дивитись
+                        </button>
+                    </footer>
+                </div>
+
+                <div class="carousel-body">
+                    <header class="sp-header">
+
+                        <a href="#" class="brand-link">
+                            <h3>
+                                Поводир
+                            </h3>
+                        </a>
+
+                    </header>
+
+                    <main class="sp-main">
+                        <p class="slide-paragraph">
+                            рагічна й патріотична розповідь про радянські репресії проти кобзарів та лірників –
+                            претендент від України на 'Оскар' та
+                            дебют співачки Джамали у великому кіно. Робота над фільмом почалася у 2007 році, а в основу
+                            картини лягли реальні події
+                            та свідчення.
+                        </p>
+                    </main>
+
+                    <footer class="sp-footer">
+                        <button class="sp-button">
+                            Дивитись
+                        </button>
+                    </footer>
+                </div>
+
+                <div class="carousel-body">
+                    <header class="sp-header">
+
+                        <a href="#" class="brand-link">
+                            <h3>
+                                Кіборги
+                            </h3>
+                        </a>
+
+                    </header>
+
+                    <main class="sp-main">
+                        <p class="slide-paragraph">
+                            Вересень 2014 року, Донецький аеропорт. Українські військові четвертий місяць відбивають
+                            атаки супротивників, які
+                            прагнуть отримати одну з ключових для базування й перекидання військ точок. На двотижневе
+                            чергування сюди прибуває група
+                            молодих солдат, зібраних із добровольців. Вони навчаються, беруть участь у боях, спілкуються
+                            один з одним і з місцевим
+                            психологом, намагаючись сформулювати своє ставлення до ситуації й людей.
+                        </p>
+                    </main>
+
+                    <footer class="sp-footer">
+                        <button class="sp-button">
+                            Дивитись
+                        </button>
+                    </footer>
+                </div>
+            </div>
+
+            <div class="next slide-button">
+                <span class="material-symbols-outlined">
+                    arrow_forward_ios
+                </span>
+            </div>
+
+        </div>
+    </header>
+
+    <!--Main content-->
+
+    <main class="main-content">
+        <div class="main-body">
+            <div class="film-list">
+
+            </div>
+        </div>
+    </main>
+
+    <!--Footer-->
+
+    <footer class="main-footer">
+        <div class="footer-body">
+            <div class="links-col">
+                <ul class="footer-link-list">
+                    <li>
+                        <a href="#" class="link">
+                            link 1
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="link">
+                            link 2
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="link">
+                            link 3
+                        </a>
+                    </li>
+                </ul>
+                <ul class="footer-link-list">
+                    <li>
+                        <a href="#" class="link">
+                            link 1
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="link">
+                            link 2
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="link">
+                            link 3
+                        </a>
+                    </li>
+                </ul>
+                <ul class="footer-link-list">
+                    <li>
+                        <a href="#" class="link">
+                            link 1
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="link">
+                            link 2
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="link">
+                            link 3
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
