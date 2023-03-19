@@ -137,3 +137,43 @@ html {
 ul {
   list-style-type: none;
 }
+
+.form-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 30px;
+  width: 50%;
+  transition: 0.5s;
+}
+.form-container .form {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form-container .form .search-bar {
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form-container .form .search-bar .search {
+  width: 100%;
+  font-size: 20px;
+  padding: 8px;
+  border: none;
+  outline: none;
+  transition: 0.5s;
+}
+.form-container .form .search-bar .submit {
+  font-size: 30px;
+  padding: 8px;
+  border: none;
+  width: 70px;
+  color: whitesmoke;
+  background: rgb(0, 91, 187);
+}

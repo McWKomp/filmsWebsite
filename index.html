@@ -19,11 +19,9 @@
 <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 
-<link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-
 <!--JAVASCRIPT & JSON-->
 <script type="text/javascript" src="films.json"></script>
+<script type="text/javascript" src="JS/slider.js"></script>
 <script type="text/javascript" src="JS/api.js"></script>
 
 <body>
@@ -35,6 +33,19 @@
                 <a href="#" class="brand-link">
                     <h1>Film.UA</h1>
                 </a>
+            </div>
+
+            <div class="form-container">
+                <form action="get" class="form">
+                    <div class="search-bar">
+                        <input type="text" id="search" class="search" placeholder="Пошук" value="">
+                        <label>
+                            <input type="submit" id="submit" class="submit material-symbols-outlined" value="search">
+                        </label>
+
+                    </div>
+
+                </form>
             </div>
             <div class="links-row">
                 <ul class="header-link-list">
@@ -228,9 +239,11 @@
 
     <main class="main-content">
         <div class="main-body">
+
             <div class="film-list">
 
             </div>
+
         </div>
     </main>
 
