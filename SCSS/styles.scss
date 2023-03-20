@@ -24,6 +24,60 @@ html {
     background-position: 50% 40%;
     background-size: cover;
 
+    .form-container {
+        display: flex;
+        padding: 30px;
+        width: 50%;
+
+        .form {
+            width: 100%;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+
+            .search-bar {
+                border-radius: 8px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                overflow: hidden;
+                transition: 0.5s;
+                width: 70px;
+
+
+
+
+                .search {
+                    width: 100%;
+                    font-size: 20px;
+                    border: none;
+                    outline: none;
+                    transition: 0.5s;
+                    transition: padding 0s;
+
+                    &:-webkit-autofill {
+                        -webkit-box-shadow: 0 0 0px 1000px rgb(255, 255, 255) inset;
+                    }
+                }
+
+                .search-icon {
+                    font-size: 30px;
+                    padding: 8px;
+                    border: none;
+                    width: 70px;
+                    color: rgb(255, 255, 255);
+                    background: rgb(0, 91, 187);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    transition: 0.3s;
+                }
+            }
+
+        }
+
+    }
+
     .carousel {
         height: 550px;
         display: flex;
@@ -62,7 +116,6 @@ html {
             padding: 10px;
             width: 80%;
             backdrop-filter: blur(10px);
-            box-shadow: rgba(14, 30, 37, 0.78) 0px 2px 8px 0px, rgba(14, 30, 37, 0.98) 0px 2px 10px 0px;
 
             .sp-header {
                 font-size: 25px;
@@ -101,16 +154,12 @@ html {
                     box-shadow: rgb(15, 77, 143) 0px 0px 0px inset;
 
                     &:hover {
-                        box-shadow: rgb(15, 77, 143) 150px 0px 0px inset;
+                        box-shadow: rgb(15, 77, 143) 151px 0px 0px inset;
                         color: whitesmoke;
                     }
                 }
             }
         }
-    }
-
-    .brand-link {
-        text-decoration: none;
     }
 
     .header-body {
@@ -123,17 +172,8 @@ html {
 
         .brand {
 
-
             h1 {
                 color: #333;
-                box-shadow: rgb(255, 213, 0) 0px 0px 0px inset, rgb(0, 91, 187) 0px 0px 0px inset;
-                transition: 0.3s;
-                padding: 0px 10px;
-                font-size: 40px;
-
-                &:hover {
-                    box-shadow: rgba(255, 213, 0, 1) 0px -5px 0px inset, rgba(0, 91, 187, 1) 0px 5px 0px inset;
-                }
             }
 
         }
@@ -164,53 +204,197 @@ html {
     }
 }
 
-ul {
-    list-style-type: none;
+.brand-link {
+    text-decoration: none;
 }
 
-.form-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 30px;
-    width: 50%;
-    transition: 0.5s;
+.brand {
 
-    .form {
-        width: 100%;
-        padding: 10px;
+    h1 {
+        color: #333;
+        box-shadow: rgb(255, 213, 0) 0px 0px 0px inset, rgb(0, 91, 187) 0px 0px 0px inset;
+        transition: 0.3s;
+        padding: 0px 10px;
+        font-size: 40px;
+
+        &:hover {
+            box-shadow: rgba(255, 213, 0, 1) 0px -5px 0px inset, rgba(0, 91, 187, 1) 0px 5px 0px inset;
+        }
+    }
+
+}
+
+.main-content {
+    .film-list {
+        padding: 40px 5%;
         display: flex;
+        flex-wrap: wrap;
         justify-content: center;
-        align-items: center;
 
-        .search-bar {
-            border-radius: 8px;
-            overflow: hidden;
+        p.start-insert {
+            font-size: 50px;
+            color: whitesmoke;
+            margin: 10% 0px;
+        }
+
+        //styles for getMovie()
+
+        .film-body {
             display: flex;
-            align-items: center;
-            justify-content: center;
+            padding: 40px 5%;
 
-            .search {
-                width: 100%;
-                font-size: 20px;
-                padding: 8px;
-                border: none;
-                outline: none;
-                transition: 0.5s;
-            }
-
-            .submit {
-                font-size: 30px;
-                padding: 8px;
-                border: none;
-                width: 70px;
+            .film-description {
                 color: whitesmoke;
-                background: rgb(0, 91, 187);
+                font-size: 20px;
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                width: 60%;
+
+                .film-info {
+                    h3 {
+                        font-size: 30px;
+                    }
+
+                    .info-list {
+                        .list-item {
+                            padding: 5px 0px;
+                        }
+                    }
+                }
+
+                .button-container {
+                    display: flex;
+                    width: 320px;
+                    justify-content: space-between;
+
+                    .button {
+                        background: #ffffff;
+                        padding: 5px;
+                        border-radius: 5px;
+                        color: #111;
+                        text-decoration: none;
+                        transition: 0.25s;
+
+                        &:first-of-type:hover {
+                            background: rgb(255, 213, 0);
+                        }
+
+                        &:last-of-type:hover {
+                            background: rgb(0, 91, 187);
+                            color: white;
+                        }
+                    }
+                }
             }
         }
 
+        //styles for getMovies()
+        .film-poster {
+            height: 500px;
+            width: 300px;
+            object-fit: cover;
+        }
+
+        .film-container {
+            padding: 20px;
+        }
+
+        .film-container-body {
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+
+
+
+            .film-info {
+                color: whitesmoke;
+                font-size: 30px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                p {
+                    font-weight: 100;
+                }
+
+                a {
+                    margin-top: 5%;
+                    padding: 5px;
+                    width: 150px;
+                    background: #333;
+                    text-decoration: none;
+                    color: white;
+                    text-align: center;
+                    transition: 0.3s;
+                    font-size: 25px;
+
+                    &:hover {
+                        background: #e84949;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.main-footer {
+    background: #111;
+
+    .footer-body {
+        padding: 10px 0px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .brand {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+
+
+        h1 {
+            font-size: 60px;
+            color: whitesmoke;
+            width: max-content;
+        }
 
     }
 
+    .links-col {
+        display: flex;
+        justify-content: space-evenly;
+        width: 50%;
+        padding: 5% 0px;
+        border-right: #333 1px solid;
+
+        .footer-link-list {
+            padding: 10px;
+        }
+
+        .link,
+        .list-header {
+            color: whitesmoke;
+            transition: 0.3s;
+            font-size: 20px;
+            text-decoration: none;
+        }
+
+        .list-header {
+            color: rgb(255, 213, 0);
+        }
+
+        .link:hover {
+            color: blue;
+            text-decoration: underline;
+        }
+    }
+
+
+}
+
+ul {
+    list-style-type: none;
 }
