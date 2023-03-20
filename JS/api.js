@@ -1,20 +1,34 @@
+//when document will be ready we would have access to getMovies() by pressing Enter on keyboard
 $(document).ready(function () {
     $('.form').on('submit', function (e) {
+
+        //variable searchText have text value from <input> with "search" as a class
         let searchText = $('.search').val();
+
+        //getMovies() is start working at that point with var searchText setted as parameter
         getMovies(searchText);
         e.preventDefault();
     });
 });
 
+
+//here we have function getMovies() which have 1 required parameter (searchText)
 function getMovies(searchText) {
-    // console.log(searchText);
+
+    //with help of the Axios we get film that have searched keyword from <input class="search">
     axios.get('http://www.omdbapi.com/?s=' + searchText + '&apikey=817e1a94')
         .then((response) => {
-            console.log(response);
+
+            //here we get movies which accords to our .search value
             let movies = response.data.Search;
+
+            //here we create empty variable output
             let output = '';
+
+            //for each movie in movies we make an HTML structure (you can see it right under)
             $.each(movies, function (index, movie) {
-                console.log(movie)
+
+                //structure itself
                 output += `
             <div class="film-container">
                 <div class="film-container-body">
@@ -26,6 +40,7 @@ function getMovies(searchText) {
                             <p>${movie.Year}</p>
                         </div>
                         
+                        <!--here we have button and its "onclick" summons a function movieSelected(id) and "id" parameter of this function is "imdbID" of "movie" object-->
                         <a onclick="movieSelected('${movie.imdbID}')" class="film-button" href="#">
                             Дивитись
                         </a>
@@ -35,27 +50,40 @@ function getMovies(searchText) {
             `;
             });
 
+            //here we append an output to HTML element .film-list as a HTML structure, not as such a text
             $('.film-list').html(output);
         })
+        // .catch() helps us to catch the errors and if would be errors the .catch() will say it
         .catch((err) => {
             console.log(err);
         });
 }
 
+
+//here we have function movieSelected() which have 1 required parameter (id)
 function movieSelected(id) {
+
+    // as a new item we set a key "movieID" with value "id" to sessionStorage
     sessionStorage.setItem('movieID', id);
+
+    // window.location opens a new window
     window.location = 'film.html';
     return false;
 }
 
 function getMovie() {
+
+    // variable right under gets "movieID" from sessionStorage so movieId = 'movieId' now
     let movieID = sessionStorage.getItem('movieID');
 
+    //with help of the Axios we get film that we clicked on and new window opens with full description of that film
     axios.get('http://www.omdbapi.com/?i=' + movieID + '&apikey=817e1a94')
         .then((response) => {
-            console.log(response);
+
+            //movie is an object with values
             let movie = response.data;
-            // console.log(movie.imdbID);
+
+            //another output but that one will go to the "film.html", not to the "index.html"
             let output = `
             <div class="film">
                 <div class="film-body">
@@ -74,7 +102,11 @@ function getMovie() {
                             </ul>
                         </div>
                         <div class="button-container">
+
+                            <!--that button will send us to IMDbs official website. To get film that we need that link requires "imdbID" of "movie" object-->
                             <a href="https://www.imdb.com/title/${movie.imdbID}" target="_blank" class="button">Трейлер на IMDB</a>
+
+                            <!--that button will return us to the start page-->
                             <a href="index.html" class="button">На головну сторінку</a>
                         </div>
                     </div>
@@ -82,8 +114,12 @@ function getMovie() {
             </div>
             
             `;
+
+            //here we append an output to HTML element .film-list as a HTML structure, not as such a text
             $('.film-list').html(output);
         })
+
+        // .catch() helps us to catch the errors and if would be errors the .catch() will say it
         .catch((err) => {
             console.log(err);
         });
